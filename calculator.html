@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+      <head>
+        <title>Calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+      <body>
+        <div class="container text-center">
+        <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 m-5 border border-4 rounded border-success">
+            <div class="row m-3">
+                <div class="col-sm">
+                    <h1 style="text-align: center;">Calculator</h1>
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-sm">
+                    <input type="text" name="no1" id="no1" placeholder="Enter number here" class="form-control">
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-sm-3">
+                    <input type="button" name="one" id="one" value="1" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="two" id="two" value="2" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="three" id="three" value="3" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="four" id="four" value="4" class="btn btn-lg btn-success">
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-sm-3">
+                    <input type="button" name="five" id="five" value="5" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="six" id="six" value="6" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="seven" id="seven" value="7" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="eight" id="eight" value="8" class="btn btn-lg btn-success">
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-sm-3">
+                    <input type="button" name="nine" id="nine" value="9" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="zero" id="zero" value="0" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="add" id="add" value="+" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="sub" id="sub" value="-" class="btn btn-lg btn-success">
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="col-sm-3">
+                    <input type="button" name="div" id="div" value="/" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="mul" id="mul" value="*" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="cal" id="cal" value="=" class="btn btn-lg btn-success">
+                </div>
+                <div class="col-sm-3">
+                    <input type="button" name="clear" id="clear" value="cr" class="btn btn-lg btn-success">
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+      </body>
+    </html>
+</head>
+<script>
+    $(document).ready(function(){
+        $("#one").click(function(){
+            $("#no1").val($("#no1").val()+"1");
+        });
+        $("#two").click(function(){
+            $("#no1").val($("#no1").val()+"2");
+        });
+        $("#three").click(function(){
+            $("#no1").val($("#no1").val()+"3");
+        });
+        $("#four").click(function(){
+            $("#no1").val($("#no1").val()+"4");
+        });
+        $("#five").click(function(){
+            $("#no1").val($("#no1").val()+"5");
+        });
+        $("#six").click(function(){
+            $("#no1").val($("#no1").val()+"6");
+        });
+        $("#seven").click(function(){
+            $("#no1").val($("#no1").val()+"7");
+        });
+        $("#eight").click(function(){
+            $("#no1").val($("#no1").val()+"8");
+        });
+        $("#nine").click(function(){
+            $("#no1").val($("#no1").val()+"9");
+        });
+        $("#zero").click(function(){
+            $("#no1").val($("#no1").val()+"0");
+        });
+        $("#add").click(function(){
+            $("#no1").val($("#no1").val()+"+");
+        });
+        $("#sub").click(function(){
+            $("#no1").val($("#no1").val()+"-");
+        });
+        $("#div").click(function(){
+            $("#no1").val($("#no1").val()+"/");
+        });
+        $("#mul").click(function(){
+            $("#no1").val($("#no1").val()+"*");
+        });
+
+        $("#cal").click(function(){
+            var num=$("#no1").val();
+            var num1=num;
+            var n = num.length;
+            var n3= new Array();
+            var no,n1,n2;
+            for (let j=0;j<n;j++){
+                if((num[j]=='*')||(num[j]=='/')||(num[j]=='+')||(num[j]=='-')){
+                    n3.push(num[j]);
+                }
+            }
+            num1=num1.replaceAll('+',' ');
+            num1=num1.replaceAll('*',' ');
+            num1=num1.replaceAll('/',' ');
+            num1=num1.replaceAll('-',' ');
+            var num2=num1.split(' ');
+            n1=n3.length;
+            for(var i=0;i<=n1;i++){
+                if(n3[i]=='*'){
+                    no=parseInt(num2[i])*parseInt(num2[i+1]);
+                    num2[i]=no;
+                    n3.splice(i,1);
+                    num2.splice(i+1,1);
+                    i-=1;
+                }
+            }
+            n1=n3.length;
+            for(let i=0;i<=n1;i++){
+                if(n3[i]=='/'){
+                    no=parseInt(num2[i])/parseInt(num2[i+1]);
+                    num2[i]=no;
+                    n3.splice(i,1);
+                    num2.splice(i+1,1);
+                    i-=1;
+                }
+            }
+            n1=n3.length;
+            for(let i=0;i<=n1;i++){
+                if(n3[i]=='+'){
+                    no=parseInt(num2[i])+parseInt(num2[i+1]);
+                    num2[i]=no;
+                    n3.splice(i,1);
+                    num2.splice(i+1,1);
+                    i-=1;
+                }
+                else if(n3[i]=='-'){
+                    no=parseInt(num2[i])-parseInt(num2[i+1]);
+                    num2[i]=no;
+                    n3.splice(i,1);
+                    num2.splice(i+1,1);
+                    i-=1;
+                }
+            }
+            
+            $("#no1").val(no);
+        })
+        $("#clear").click(function(){
+            $("#no1").val('');
+        });
+    });
+</script>
